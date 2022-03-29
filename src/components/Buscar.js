@@ -7,13 +7,13 @@ const Buscar = () => {
     const navigate = useNavigate();
     const [valorInput, setValorInput] = useState("")
     const [peliculas, setPeliculas] = useState([])
-    const [searchParams, setSearchParams] = useSearchParams({
+    const [searchParams] = useSearchParams({
         query: ""
     })
 
     useEffect(() => {
         if (searchParams.get('query')) {
-            fetch(`${baseUrlApi}?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
+            fetch(`${baseUrlApi}/search/movie?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.results) {
