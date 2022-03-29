@@ -13,7 +13,7 @@ const Buscar = () => {
 
     useEffect(() => {
         if (searchParams.get('query')) {
-            fetch(`${baseUrlApi}?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
+            fetch(`${baseUrlApi}/search/movie?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.results) {
