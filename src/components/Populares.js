@@ -11,9 +11,6 @@ const Populares = () => {
 
     }, [])
 
-    console.log(peliculas)
-
-
     return (
 
         <>
