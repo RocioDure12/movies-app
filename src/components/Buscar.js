@@ -7,7 +7,7 @@ const Buscar = () => {
     const navigate = useNavigate();
     const [valorInput, setValorInput] = useState("")
     const [peliculas, setPeliculas] = useState([])
-    const [searchParams, setSearchParams] = useSearchParams({
+    const [searchParams] = useSearchParams({
         query: ""
     })
 
