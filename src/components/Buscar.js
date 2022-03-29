@@ -1,6 +1,48 @@
-const Buscar = () =>{
-    return(
-        <h1>Buscar</h1>
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
+import { useNavigate } from "react-router-dom";
+
+const Buscar = () => {
+    const navigate=useNavigate();
+    const [valorInput, setValorInput] = useState("")
+    const [peliculas, setPeliculas] = useState([])
+    const [searchParams, setSearchParams] = useSearchParams({
+        query: ""
+    })
+
+    useEffect(() => {
+        
+        fetch(`${baseUrlApi}?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.results) {
+                    setPeliculas(data.results)
+                }
+            })
+        
+    }, [searchParams])
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(valorInput)
+        navigate(`/buscar?query=${valorInput}`)
+        
+    }
+
+    const handleChange = (e) => {
+        setValorInput(e.target.value)
+    }
+
+    return (
+        <div>
+        <form onSubmit={handleSubmit}>
+            <label  >Buscar</label>
+            <input type="text" onChange={handleChange} required></input>
+            <input type="submit" value="Submit"></input>
+        </form>
+        { peliculas.map(pelicula => <h1>{pelicula.title}</h1>) }
+        </div>
     )
 }
 
