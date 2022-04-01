@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { useNavigate } from "react-router-dom";
+import Card from "./Card";
 
 const Buscar = () => {
     const navigate = useNavigate();
@@ -41,7 +42,13 @@ const Buscar = () => {
                 <input type="text" onChange={handleChange} required></input>
                 <input type="submit" value="Submit"></input>
             </form>
-            {peliculas.map(pelicula => <h1 key={pelicula.id}>{pelicula.title}</h1>)}
+            {peliculas.map(peliculas => <Card
+                key={peliculas.id}
+                titulo={peliculas.title}
+                image={peliculas.poster_path}
+            />
+            )
+            }
         </>
     )
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
+import Card from "./Card";
 
 const Populares = () => {
     const [peliculas, setPeliculas] = useState([])
@@ -15,7 +16,14 @@ const Populares = () => {
 
         <>
             <h1>Peliculas Populares</h1>
-            {peliculas.map(pelicula => <p key={pelicula.id}>{pelicula.title}</p>)}
+            {peliculas.map(peliculas => <Card
+                key={peliculas.id}
+                titulo={peliculas.title}
+                image={peliculas.poster_path}
+            />
+            )
+            }
+
         </>
 
     )
