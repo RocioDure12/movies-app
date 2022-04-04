@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
+import Card from "./Card";
 
 const UltimosLanzamientos = () => {
 
@@ -14,8 +15,15 @@ const UltimosLanzamientos = () => {
 
     return (
         <>
-        <h1>ultimos Lanzamientos</h1>
-        {peliculas.map(pelicula => <p key={pelicula.id}>{pelicula.title}</p>)}
+            <h1>Últimos Lanzamientos</h1>
+            {peliculas.map(peliculas => <Card
+                key={peliculas.id}
+                id={peliculas.id}
+                titulo={peliculas.title}
+                image={peliculas.poster_path}
+            />
+            )
+            }
         </>
     )
 }
