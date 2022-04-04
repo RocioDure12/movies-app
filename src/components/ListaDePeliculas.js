@@ -1,9 +1,10 @@
 import "../styles/ListaPeliculas.scss";
 import { useState, useEffect } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
+import { Link } from "react-router-dom";
 
-const ListaDePeliculas = ({ titulo, url }) => {
-    
+const ListaDePeliculas = ({ url, id}) => {
+
     const [peliculas, setPeliculas] = useState([])
     useEffect(() => {
         fetch(`${baseUrlApi}/movie/${url}?api_key=${apiKey}&languaje=es-ES`)
@@ -15,8 +16,7 @@ const ListaDePeliculas = ({ titulo, url }) => {
         <>
 
             <ul className="lista">
-                <h2>{titulo}</h2>
-                {peliculas.map(pelicula => <li key={pelicula.id}>{pelicula.title}</li>)}
+                {peliculas.map(pelicula => <li key={pelicula.id}><Link to={`/pelicula/${pelicula.id}`}>{pelicula.title}</Link></li>)}
             </ul>
         </>
     )

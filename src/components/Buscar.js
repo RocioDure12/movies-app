@@ -42,10 +42,13 @@ const Buscar = () => {
                 <input type="text" onChange={handleChange} required></input>
                 <input type="submit" value="Submit"></input>
             </form>
-            {peliculas.map(peliculas => <Card
-                key={peliculas.id}
-                titulo={peliculas.title}
-                image={peliculas.poster_path}
+            {peliculas.map(pelicula => <Card
+                key={pelicula.id}
+                id={pelicula.id}
+
+                titulo={pelicula.title}
+                image={pelicula.poster_path}
+
             />
             )
             }

@@ -18,6 +18,7 @@ const UltimosLanzamientos = () => {
             <h1>Últimos Lanzamientos</h1>
             {peliculas.map(peliculas => <Card
                 key={peliculas.id}
+                id={peliculas.id}
                 titulo={peliculas.title}
                 image={peliculas.poster_path}
             />
