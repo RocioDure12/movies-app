@@ -1,4 +1,32 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap);
 .nav-bar {
-  background-color: #44b899;
+  background-color: #05a649;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  position: fixed;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-bar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-bar ul li {
+  padding: 0.75rem;
+  color: white;
 }
 /*# sourceMappingURL=NavBar.css.map */

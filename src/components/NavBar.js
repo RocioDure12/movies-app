@@ -1,10 +1,14 @@
 import "../styles/NavBar.scss";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const NavBar=()=>{
+
+const NavBar = () => {
     return (
         <nav className="nav-bar">
             <ul>
+
+                <FontAwesomeIcon icon="coffee" />
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/lanzamientos">Últimos lanzamientos</Link></li>
                 <li><Link to="/populares">Populares</Link></li>
@@ -13,5 +17,7 @@ const NavBar=()=>{
 
         </nav>
     )
+
+
 }
 export default NavBar;

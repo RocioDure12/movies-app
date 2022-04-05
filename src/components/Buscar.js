@@ -42,6 +42,7 @@ const Buscar = () => {
                 <input type="text" onChange={handleChange} required></input>
                 <input type="submit" value="Submit"></input>
             </form>
+            <div className="container">
             {peliculas.map(pelicula => <Card
                 key={pelicula.id}
                 id={pelicula.id}
@@ -52,6 +53,7 @@ const Buscar = () => {
             />
             )
             }
+            </div>
         </>
     )
 }

@@ -15,17 +15,24 @@ const UltimosLanzamientos = () => {
 
     return (
         <>
-            <h1>Últimos Lanzamientos</h1>
-            {peliculas.map(peliculas => <Card
-                key={peliculas.id}
-                id={peliculas.id}
-                titulo={peliculas.title}
-                image={peliculas.poster_path}
-            />
+        <div className="top">
+                <h2>Últimos Lanzamientos</h2>
+                <div className="container">
+
+                    {peliculas.map(peliculas => <Card
+
+                        key={peliculas.id}
+                        id={peliculas.id}
+                        titulo={peliculas.title}
+                        image={peliculas.poster_path}
+                    />
+                    )
+                    }
+                </div>
+                </div>
+                </>
+           
             )
-            }
-        </>
-    )
 }
 
-export default UltimosLanzamientos;
+            export default UltimosLanzamientos;
