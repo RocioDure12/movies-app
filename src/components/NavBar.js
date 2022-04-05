@@ -7,8 +7,6 @@ const NavBar = () => {
     return (
         <nav className="nav-bar">
             <ul>
-
-                <FontAwesomeIcon icon="coffee" />
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/lanzamientos">Últimos lanzamientos</Link></li>
                 <li><Link to="/populares">Populares</Link></li>
