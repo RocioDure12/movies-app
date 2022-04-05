@@ -15,18 +15,20 @@ const Populares = () => {
     return (
 
         <>
-            <div className="container">
-                <h1>Peliculas Populares</h1>
-                {peliculas.map(peliculas => <Card
-                    key={peliculas.id}
-                    id={peliculas.id}
-                    titulo={peliculas.title}
-                    image={peliculas.poster_path}
-                />
-                )
-                }
-            </div>
+            <div className="padding-top">
+                <h2>Peliculas Populares</h2>
+                <div className="container">
 
+                    {peliculas.map(peliculas => <Card
+                        key={peliculas.id}
+                        id={peliculas.id}
+                        titulo={peliculas.title}
+                        image={peliculas.poster_path}
+                    />
+                    )
+                    }
+                </div>
+            </div>
         </>
 
     )

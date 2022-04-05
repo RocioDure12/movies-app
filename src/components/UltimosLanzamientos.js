@@ -15,7 +15,7 @@ const UltimosLanzamientos = () => {
 
     return (
         <>
-        <div className="top">
+        <div className="padding-top">
                 <h2>Últimos Lanzamientos</h2>
                 <div className="container">
 
