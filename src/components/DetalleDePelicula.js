@@ -18,7 +18,7 @@ const DetalleDePelicula = () => {
 
         <>
             <div className="card" key={pelicula.id}>
-                <img src={`https://image.tmdb.org/t/p/w400/${pelicula.poster_path}`} />
+                <img src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`} />
                 <h2>{pelicula.title}</h2>
                 <p>{pelicula.overwiew}</p>
                 <h4>Generos</h4>

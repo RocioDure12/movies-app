@@ -5,6 +5,8 @@ import UltimosLanzamientos from "./components/UltimosLanzamientos";
 import Populares from "./components/Populares";
 import Buscar from "./components/Buscar";
 import DetalleDePelicula from "./components/DetalleDePelicula";
+import "./styles/reset.scss";
+
 
 const App = () => {
   return (
