@@ -15,7 +15,7 @@ const UltimosLanzamientos = () => {
 
     return (
         <>
-        <div>
+            <div>
                 <h2>Últimos Lanzamientos</h2>
                 <div className="container">
 
@@ -29,10 +29,10 @@ const UltimosLanzamientos = () => {
                     )
                     }
                 </div>
-                </div>
-                </>
-           
-            )
+            </div>
+        </>
+
+    )
 }
 
-            export default UltimosLanzamientos;
+export default UltimosLanzamientos;
