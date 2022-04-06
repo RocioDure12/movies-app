@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { Link } from "react-router-dom";
 
-const ListaDePeliculas = ({ url, id }) => {
+const ListaDePeliculas = ({ url, id}) => {
 
     const [peliculas, setPeliculas] = useState([])
     useEffect(() => {
