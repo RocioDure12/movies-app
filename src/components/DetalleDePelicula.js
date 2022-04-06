@@ -22,10 +22,10 @@ const DetalleDePelicula = () => {
                 <h2>{pelicula.title}</h2>
                 <p>{pelicula.overwiew}</p>
                 <h4>Generos</h4>
-               
+
             </div>
 
-            
+
 
         </>
 
