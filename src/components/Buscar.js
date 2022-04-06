@@ -37,22 +37,25 @@ const Buscar = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Buscar</label>
-                <input type="text" onChange={handleChange} required></input>
-                <input type="submit" value="Submit"></input>
-            </form>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label>Buscar</label>
+                    <input type="text" onChange={handleChange} required></input>
+                    <input type="submit" value="Submit"></input>
+                </form>
+            </div>
+
             <div className="container">
-            {peliculas.map(pelicula => <Card
-                key={pelicula.id}
-                id={pelicula.id}
+                {peliculas.map(pelicula => <Card
+                    key={pelicula.id}
+                    id={pelicula.id}
 
-                titulo={pelicula.title}
-                image={pelicula.poster_path}
+                    titulo={pelicula.title}
+                    image={pelicula.poster_path}
 
-            />
-            )
-            }
+                />
+                )
+                }
             </div>
         </>
     )

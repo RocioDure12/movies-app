@@ -15,7 +15,7 @@ const Populares = () => {
     return (
 
         <>
-            <div className="padding-top">
+            <div>
                 <h2>Peliculas Populares</h2>
                 <div className="container">
 
