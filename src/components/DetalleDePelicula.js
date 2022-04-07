@@ -18,8 +18,8 @@ const DetalleDePelicula = () => {
 
         <>
             {pelicula &&
-                <div className="card" key={pelicula.id}>
-                    <img src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`} />
+                <div className="container" key={pelicula.id}>
+                    <img alt="pelicula" src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`} />
                     <h2>{pelicula.title}</h2>
                     <p>{pelicula.overview}</p>
                     <h4>Generos</h4>

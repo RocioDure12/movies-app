@@ -1,5 +1,7 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap);
 body {
   margin: 0;
+  background-color: #efefef;
 }
 
 p,
@@ -17,7 +19,6 @@ h6 {
           box-sizing: border-box;
 }
 
-ul,
 li {
   padding: 0;
   margin: 0;
@@ -33,5 +34,9 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.padding-top {
+  padding-top: 10%;
 }
 /*# sourceMappingURL=reset.css.map */

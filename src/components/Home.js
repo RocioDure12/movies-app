@@ -1,11 +1,13 @@
+
 import ListaDePeliculas from "./ListaDePeliculas";
+import Carousel from "./Carousel";
 
 
 const Home = () => {
 
     return (
         <>
-        
+            <Carousel />
             <h1>Home</h1>
             <ListaDePeliculas
                 titulo="Peliculas populares"

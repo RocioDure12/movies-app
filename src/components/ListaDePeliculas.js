@@ -2,8 +2,9 @@ import "../styles/ListaPeliculas.scss";
 import { useState, useEffect } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { Link } from "react-router-dom";
+import Scrollbar from "./Scrollbar";
 
-const ListaDePeliculas = ({ url, id}) => {
+const ListaDePeliculas = ({ url, id }) => {
 
     const [peliculas, setPeliculas] = useState([])
     useEffect(() => {
@@ -13,12 +14,8 @@ const ListaDePeliculas = ({ url, id}) => {
 
     }, [])
     return (
-        <>
+        <h1>fsa</h1>
 
-            <ul className="lista">
-                {peliculas.map(pelicula => <li key={pelicula.id}><Link to={`/pelicula/${pelicula.id}`}>{pelicula.title}</Link></li>)}
-            </ul>
-        </>
     )
 }
 
