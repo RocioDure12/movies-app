@@ -6,16 +6,6 @@ import "../styles/carousel.scss";
 
 const Carousel = () => {
 
-{/*const [peliculas, setPeliculas] = useState([])
-
-import { useEffect, useState } from "react";
-import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
-  useEffect(() => {
-    fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&languaje=es-ES`)
-      .then(res => res.json())
-  .then(data => setPeliculas(data.results))
-
-  }, [])*/}
 
   return (
     <div className="container-carousel">
