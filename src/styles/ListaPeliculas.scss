@@ -1,6 +1,31 @@
-.lista{
-width: 300px;
-display: flex;
-flex-direction: column;
-border: 1px solid violet;
+@import "variables.scss";
+
+
+.contenedor-listas {
+    display: flex;
+    justify-content: center;
+}
+
+.lista {
+    width: 320px;
+    padding: $base-padding;
+    margin: 20px;
+
+    li {
+       display: flex;
+       justify-content: space-between;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
+    }
+
+    h2 {
+        background-color: $primary;
+        color: $font-light;
+        font-size: $font-size-md;
+        padding: $base-padding;
+        text-align: center;
+        position: sticky;
+        top: 0;
+    }
 }

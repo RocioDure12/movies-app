@@ -8,9 +8,14 @@
     box-shadow: $base-box-shadow;
     padding: $base-padding;
     position: relative;
-    font-size:$base-font-size;
+    font-size: $base-font-size;
     color: $font-light;
     height: 70px;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
 
     ul {
         display: flex;
