@@ -17,7 +17,7 @@ const ListaDePeliculas = ({ url, id, titulo }) => {
             .then(res => res.json())
             .then(data => setPeliculas(data.results))
 
-    }, [])
+    }, [url])
     return (
         <>
             <div className="lista">

@@ -12,7 +12,7 @@ const DetalleDePelicula = () => {
             .then(data => {
                 setPelicula(data)
             })
-    }, [])
+    }, [params.id])
 
     return (
 
