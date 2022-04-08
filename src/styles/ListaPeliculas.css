@@ -1,12 +1,31 @@
-.lista {
-  width: 300px;
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap);
+.contenedor-listas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 1px solid violet;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lista {
+  width: 320px;
+  padding: 0.75rem;
+  margin: 20px;
+}
+
+.lista li {
+  padding: 10px;
+}
+
+.lista h2 {
+  background-color: #05a649;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 /*# sourceMappingURL=ListaPeliculas.css.map */

@@ -1,5 +1,10 @@
 @import "variables.scss";
 
-.contenedor{
-background-color: $primary;
+.contenedor {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: $primary;
+    color: $font-light;
+    padding:$base-padding;
 }

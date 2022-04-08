@@ -1,20 +1,24 @@
 import ListaDePeliculas from "./ListaDePeliculas";
+import Carousel from "./Carousel";
+
 
 const Home = () => {
- 
+
     return (
         <>
-            <h1>Home</h1>
-            <ListaDePeliculas
-                titulo="Peliculas populares"
-                url="popular"
-            />
+            <Carousel />
+            <div className="contenedor-listas">
+                <ListaDePeliculas
+                    titulo="Peliculas populares"
+                    url="popular"
+                />
 
-            <ListaDePeliculas
-                titulo="Peliculas Mejor Punteadas"
-                url="top_rated"
+                <ListaDePeliculas
+                    titulo="Peliculas Mejor Punteadas"
+                    url="top_rated"
 
-            />
+                />
+            </div>
 
         </>
     )

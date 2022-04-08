@@ -5,6 +5,7 @@
   grid-gap: 10px;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 30px;
 }
 
 .card {
@@ -18,8 +19,7 @@
   padding: 0.75rem;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-  width: 245px;
   text-align: center;
-  margin-top: 30%;
+  height: 100%;
 }
 /*# sourceMappingURL=Card.css.map */

@@ -4,7 +4,7 @@ import { apiKey, baseUrlApi } from "../auxiliares/funcionesAuxiliares";
 
 const DetalleDePelicula = () => {
     const params = useParams()
-    const [pelicula, setPelicula] = useState({})
+    const [pelicula, setPelicula] = useState()
 
     useEffect(() => {
         fetch(`${baseUrlApi}/movie/${params.id}?api_key=${apiKey}&language=es-ES`)
@@ -12,20 +12,22 @@ const DetalleDePelicula = () => {
             .then(data => {
                 setPelicula(data)
             })
-    }, [])
+    }, [params.id])
 
     return (
 
         <>
-            <div className="card" key={pelicula.id}>
-                <img src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`} />
-                <h2>{pelicula.title}</h2>
-                <p>{pelicula.overwiew}</p>
-                <h4>Generos</h4>
-               
-            </div>
+            {pelicula &&
+                <div className="container" key={pelicula.id}>
+                    <img alt="pelicula" src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`} />
+                    <h2>{pelicula.title}</h2>
+                    <p>{pelicula.overview}</p>
+                    <h4>Generos</h4>
 
-            
+                </div>
+            }
+
+
 
         </>
 
