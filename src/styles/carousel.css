@@ -1,4 +1,9 @@
 .container-carousel {
+  background-image: "https://placekitten.com/g/200/300";
+}
+
+.slick-slide img {
+  margin: auto;
   width: 300px;
 }
 /*# sourceMappingURL=carousel.css.map */

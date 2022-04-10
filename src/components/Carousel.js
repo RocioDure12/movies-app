@@ -4,41 +4,54 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/carousel.scss";
 import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
+import { Link } from "react-router-dom";
+
 
 const Carousel = () => {
 
-{/*const [peliculas, setPeliculas] = useState([])*/}
-{/*}
+  const [pelicula, setPelicula] = useState([])
   useEffect(() => {
     fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&languaje=es-ES`)
       .then(res => res.json())
-  .then(data => setPeliculas(data.results))
+      .then(data => setPelicula(data.results))
 
-  }, [])*/}
-  
+  }, [])
+
   return (
     <div className="container-carousel">
-      <Slider
-
+      <Slider style={{}}
         arrows={true}
         slidesToShow={1}
         autoplay={true}
-        autoplaySpeed={4000}
+        autoplaySpeed={3000}
+        infinite={true}
+        dots={true}
       >
-      <div>
-        <img alt="imagen" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8wM2M1MDE4ZDUxN2M1NDQzMTNhMjM3ODk1MmE4MDljNj9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.xBlycO3yocovqle_HvbXDNeC1Xi9Ccug07Ce2w3eZag"/>
-      </div>
-      <div>
-        <img alt="imagen" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8wM2M1MDE4ZDUxN2M1NDQzMTNhMjM3ODk1MmE4MDljNj9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.xBlycO3yocovqle_HvbXDNeC1Xi9Ccug07Ce2w3eZag"/>
-      </div>
-      <div>
-        <img alt="imagen" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8wM2M1MDE4ZDUxN2M1NDQzMTNhMjM3ODk1MmE4MDljNj9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.xBlycO3yocovqle_HvbXDNeC1Xi9Ccug07Ce2w3eZag"/>
-      </div>
+        {pelicula.map((pelicula) => (
+          
+            <div key={pelicula.id}>
+              <div>
+                <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} />
+              </div>
 
+              <div>
+                <Link to={`/pelicula/${pelicula.id}`}><button>Ver Más</button></Link>
+              </div>
 
-      </Slider>
+              <div>
+                <p>{pelicula.overview}</p>
+              </div>
+            </div>
+    
+        ))
+
+        }
+
+      </Slider >
     </div>
-  )
+  );
 }
+
+
 
 export default Carousel;
