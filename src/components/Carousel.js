@@ -31,7 +31,7 @@ const Carousel = () => {
 
           <div key={pelicula.id}  >
 
-            <img src={`https://image.tmdb.org/t/p/original/${pelicula.backdrop_path}`} />
+            <img alt="imagen-pelicula" src={`https://image.tmdb.org/t/p/original/${pelicula.backdrop_path}`} />
 
             <div className="info-pelicula">
               <p>{pelicula.overview}</p>
