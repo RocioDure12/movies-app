@@ -3,7 +3,7 @@
 .nav-bar {
     background-color: $primary;
     display: flex;
-    justify-content: start;
+    justify-content:flex-start;
     width: 100%;
     box-shadow: $base-box-shadow;
     padding: $base-padding;
