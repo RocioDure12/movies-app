@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { Link } from "react-router-dom";
 
-
 const Carousel = () => {
 
   const [pelicula, setPelicula] = useState([])
