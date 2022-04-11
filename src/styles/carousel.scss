@@ -1,3 +1,19 @@
-.container-carousel {
+@import "variables.scss";
 
+.container-carousel {
+    text-align: center;
+    position: relative;
+    img {
+        object-fit: cover;
+        height: 60vh;
+    }
+
+    .info-pelicula {
+        background-color: aqua;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

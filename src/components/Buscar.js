@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
+import "../styles/form.scss";
 
 const Buscar = () => {
     const navigate = useNavigate();
@@ -36,12 +37,12 @@ const Buscar = () => {
     }
 
     return (
-        <>
+        <div style={{minHeight:"calc(100vh - 140px)"}}>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <label>Buscar</label>
+                    <label>Pelicula</label>
                     <input type="text" onChange={handleChange} required></input>
-                    <input type="submit" value="Submit"></input>
+                    <input type="submit" value="Buscar"></input>
                 </form>
             </div>
 
@@ -57,7 +58,7 @@ const Buscar = () => {
                 )
                 }
             </div>
-        </>
+        </div>
     )
 }
 

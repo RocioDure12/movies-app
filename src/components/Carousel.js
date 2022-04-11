@@ -11,7 +11,7 @@ const Carousel = () => {
 
   const [pelicula, setPelicula] = useState([])
   useEffect(() => {
-    fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&languaje=es-ES`)
+    fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&language=es-ES`)
       .then(res => res.json())
       .then(data => setPelicula(data.results))
 
@@ -22,27 +22,24 @@ const Carousel = () => {
       <Slider style={{}}
         arrows={true}
         slidesToShow={1}
-        autoplay={true}
+        autoplay={false}
         autoplaySpeed={3000}
         infinite={true}
         dots={true}
       >
         {pelicula.map((pelicula) => (
-          
-            <div key={pelicula.id}>
-              <div>
-                <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} />
-              </div>
 
-              <div>
-                <Link to={`/pelicula/${pelicula.id}`}><button>Ver Más</button></Link>
-              </div>
+          <div key={pelicula.id}  >
 
-              <div>
-                <p>{pelicula.overview}</p>
-              </div>
+            <img src={`https://image.tmdb.org/t/p/original/${pelicula.backdrop_path}`} />
+
+            <div className="info-pelicula">
+              <p>{pelicula.overview}</p>
+              <Link to={`/pelicula/${pelicula.id}`}><button>Ver Más</button></Link>
             </div>
-    
+
+          </div>
+
         ))
 
         }
