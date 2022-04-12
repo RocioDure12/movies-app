@@ -19,12 +19,11 @@ const Carousel = () => {
   return (
     <div className="container-carousel">
       <Slider style={{}}
-        arrows={true}
+        arrows={false}
         slidesToShow={1}
-        autoplay={false}
+        autoplay={true}
         autoplaySpeed={3000}
         infinite={true}
-        dots={true}
       >
         {pelicula.map((pelicula) => (
 
@@ -34,7 +33,7 @@ const Carousel = () => {
 
             <div className="info-pelicula">
               <p>{pelicula.overview}</p>
-              <Link to={`/pelicula/${pelicula.id}`}><button>Ver Más</button></Link>
+              <Link to={`/pelicula/${pelicula.id}`}><button>Ver más...</button></Link>
             </div>
 
           </div>

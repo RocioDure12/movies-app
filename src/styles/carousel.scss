@@ -2,18 +2,32 @@
 
 .container-carousel {
     text-align: center;
-    position: relative;
     img {
         object-fit: cover;
         height: 60vh;
     }
 
     .info-pelicula {
-        background-color: aqua;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: $font-light;
         width: 400px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        border-radius: 4px;
+        padding: $base-padding;
     }
+    button {
+        background-color: $primary;
+        border-radius: 10px;
+        color: $font-light;
+        border: none;
+        padding: $base-padding;
+        margin: $base-margin;
+    }
+}
+
+.slick-slide {
+    position: relative;
 }
