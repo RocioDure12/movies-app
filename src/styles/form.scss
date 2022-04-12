@@ -1,9 +1,20 @@
-form{
+@import "variables.scss";
+
+form {
     display: flex;
     margin: 10px;
-  
-    label, input{
+
+    label,
+    input {
         margin: 5px;
         border-radius: 8px;
+        border: 7px;
+    }
+    button {
+        color: $font-light;
+        background-color: $primary;
+        cursor: pointer;
+        border-radius: $base-border-radius;
+        border: 2px;
     }
 }
