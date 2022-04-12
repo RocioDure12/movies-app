@@ -37,12 +37,12 @@ const Buscar = () => {
     }
 
     return (
-        <div style={{minHeight:"calc(100vh - 140px)"}}>
+        <div style={{ minHeight: "calc(100vh - 140px)" }}>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <label>Pelicula</label>
+                    <label><h3>Pelicula</h3></label>
                     <input type="text" onChange={handleChange} required></input>
-                    <input type="submit" value="Buscar"></input>
+                    <button type="submit" value="Buscar">Buscar</button>
                 </form>
             </div>
 
