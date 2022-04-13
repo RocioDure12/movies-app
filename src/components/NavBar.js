@@ -5,6 +5,7 @@ const NavBar = () => {
     return (
         <nav className="nav-bar">
             <ul>
+                <li><img src="/popcorn.svg" /></li>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/lanzamientos">Últimos lanzamientos</Link></li>
                 <li><Link to="/populares">Populares</Link></li>
