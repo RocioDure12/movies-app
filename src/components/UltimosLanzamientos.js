@@ -1,21 +1,33 @@
 import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import Card from "./Card";
+import Paginacion from "./Paginacion";
+
 
 const UltimosLanzamientos = () => {
 
     const [peliculas, setPeliculas] = useState([])
+    const [cantidadPaginas, setCantidadPaginas] = useState()
+
+    const obtenerPeliculas = (pagina) => {
+        fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&languaje=es-ES&page=${pagina}`)
+            .then(res => res.json())
+            .then(data => {
+                setPeliculas(data.results)
+                setCantidadPaginas(data.total_pages)
+            })
+
+    }
 
     useEffect(() => {
-        fetch(`${baseUrlApi}/movie/now_playing?api_key=${apiKey}&languaje=es-ES`)
-            .then(res => res.json())
-            .then(data => setPeliculas(data.results))
+        obtenerPeliculas(1)
 
     }, [])
 
+
     return (
         <>
-        <div>
+            <div>
                 <h2>Últimos Lanzamientos</h2>
                 <div className="container">
 
@@ -28,11 +40,17 @@ const UltimosLanzamientos = () => {
                     />
                     )
                     }
+
                 </div>
-                </div>
-                </>
-           
-            )
+                <Paginacion
+                    onChange={obtenerPeliculas}
+                    cantidad={cantidadPaginas}
+
+                />
+            </div>
+        </>
+
+    )
 }
 
-            export default UltimosLanzamientos;
+export default UltimosLanzamientos;

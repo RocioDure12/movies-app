@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import Card from "./Card";
+import Paginacion from "./Paginacion";
 
 const Populares = () => {
     const [peliculas, setPeliculas] = useState([])
+    const [cantidadPaginas, setCantidadPaginas] = useState()
+
+    const obtenerPeliculas = (pagina) => {
+        fetch(`${baseUrlApi}/movie/popular?api_key=${apiKey}&languaje=es-ES&page=1`)
+            .then(res => res.json())
+            .then(data => {
+                setPeliculas(data.results)
+                setCantidadPaginas(data.total_pages)
+            })
+    }
 
     useEffect(() => {
-        fetch(`${baseUrlApi}/movie/popular?api_key=${apiKey}&languaje=es-ES`)
-            .then(res => res.json())
-            .then(data => setPeliculas(data.results))
+        obtenerPeliculas(1)
 
     }, [])
 
@@ -28,6 +37,10 @@ const Populares = () => {
                     )
                     }
                 </div>
+                <Paginacion
+                    onChange={obtenerPeliculas}
+                    cantidad={cantidadPaginas}
+                />
             </div>
         </>
 
