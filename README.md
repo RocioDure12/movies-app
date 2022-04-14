@@ -19,9 +19,9 @@ Proyecto realizado en React como trabajo final del bootcamp de Desarrollo Front-
 ## Api utilizada:
 - [The Movie Database](https://www.themoviedb.org/)
 
-## Deployado con:
+## Deployment:
 
-Netlify a continuación dejo el link  [Buscador de peliculas](https://app-movie-react.netlify.app/)
+Utilicé netlify, a continuación dejo el link  [Buscador de peliculas](https://app-movie-react.netlify.app/)
 
 Para trabajar con estos archivos en forma local, luego de clonar el repositorio, ejecutar los siguientes comandos:
 
