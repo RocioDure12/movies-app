@@ -8,7 +8,7 @@ const Populares = () => {
     const [cantidadPaginas, setCantidadPaginas] = useState()
 
     const obtenerPeliculas = (pagina) => {
-        fetch(`${baseUrlApi}/movie/popular?api_key=${apiKey}&languaje=es-ES&page=1`)
+        fetch(`${baseUrlApi}/movie/popular?api_key=${apiKey}&languaje=es-ES&page=${pagina}`)
             .then(res => res.json())
             .then(data => {
                 setPeliculas(data.results)
