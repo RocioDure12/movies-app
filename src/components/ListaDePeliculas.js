@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { baseUrlApi, apiKey } from "../auxiliares/funcionesAuxiliares";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -21,7 +21,7 @@ const ListaDePeliculas = ({ url, id, titulo }) => {
     return (
         <>
             <div className="lista">
-                <Scrollbars style={{ boxShadow:"rgb(0 0 0 / 24%) 0px 3px 8px",width: 300, height: 300 }}>
+                <Scrollbars style={{ boxShadow: "rgb(0 0 0 / 24%) 0px 3px 8px", width: 300, height: 300 }}>
                     <h2>{titulo}</h2>
                     {peliculas.map((pelicula) => <Link to={`/pelicula/${pelicula.id}`}
                         key={pelicula.id}>
