@@ -26,7 +26,7 @@ const DetalleDePelicula = () => {
                         <p>{pelicula.overview}</p>
                         <h3>Generos : </h3>
                         {pelicula.genres.map((genres) => (
-                           
+
                             <ul key={genres.id}>
                                 <li>-{genres.name}</li>
 
