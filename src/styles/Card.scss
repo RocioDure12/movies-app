@@ -1,10 +1,14 @@
 @import "variables.scss";
-
+h2{
+    text-align: center;
+    
+}
 .container {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 30px;
+ 
 }
 
 .card {
