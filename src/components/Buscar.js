@@ -6,60 +6,66 @@ import Card from "./Card";
 import "../styles/form.scss";
 
 const Buscar = () => {
-    const navigate = useNavigate();
-    const [valorInput, setValorInput] = useState("")
-    const [peliculas, setPeliculas] = useState([])
-    const [searchParams] = useSearchParams({
-        query: ""
-    })
+  const navigate = useNavigate();
+  const [valorInput, setValorInput] = useState("");
+  const [peliculas, setPeliculas] = useState([]);
+  const [searchParams] = useSearchParams({
+    query: "",
+  });
 
-    useEffect(() => {
-        if (searchParams.get('query')) {
-            fetch(`${baseUrlApi}/search/movie?api_key=${apiKey}&query=${searchParams.get('query')}&language=en-ES`)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.results) {
-                        setPeliculas(data.results)
-                    }
-                })
-        }
-
-    }, [searchParams])
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        navigate(`/buscar?query=${valorInput}`)
-
+  useEffect(() => {
+    if (searchParams.get("query")) {
+      fetch(
+        `${baseUrlApi}/search/movie?api_key=${apiKey}&query=${searchParams.get(
+          "query"
+        )}&language=en-ES`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.results) {
+            setPeliculas(data.results);
+          }
+        });
     }
+  }, [searchParams]);
 
-    const handleChange = (e) => {
-        setValorInput(e.target.value)
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/buscar?query=${valorInput}`);
+  };
 
-    return (
-        <div style={{ minHeight: "calc(100vh - 140px)" }}>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <label><h3>Pelicula</h3></label>
-                    <input type="text" onChange={handleChange} required></input>
-                    <button type="submit" value="Buscar">Buscar</button>
-                </form>
-            </div>
+  const handleChange = (e) => {
+    setValorInput(e.target.value);
+  };
 
-            <div className="container">
-                {peliculas.map(pelicula => <Card
-                    key={pelicula.id}
-                    id={pelicula.id}
+  return (
+    // si aca necesitaras una variable entiendo ponerlo como style, pero en este caso no se justifica: deberia estar
+    // en el archivo de scss
+    <div style={{ minHeight: "calc(100vh - 140px)" }}>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <h3>Pelicula</h3>
+          </label>
+          <input type="text" onChange={handleChange} required></input>
+          <button type="submit" value="Buscar">
+            Buscar
+          </button>
+        </form>
+      </div>
 
-                    titulo={pelicula.title}
-                    image={pelicula.poster_path}
-
-                />
-                )
-                }
-            </div>
-        </div>
-    )
-}
+      <div className="container">
+        {peliculas.map((pelicula) => (
+          <Card
+            key={pelicula.id}
+            id={pelicula.id}
+            titulo={pelicula.title}
+            image={pelicula.poster_path}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Buscar;
